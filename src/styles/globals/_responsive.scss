@@ -1,0 +1,228 @@
+// @import "../layouts/account.scss";
+// @import "../layouts/components.scss";
+// @import "../layouts/features.scss";
+// @import "../layouts/footer.scss";
+// @import "../layouts/form.scss";
+// @import "../layouts/header.scss";
+// @import "../layouts/info.scss";
+// @import "../layouts/nav.scss";
+// @import "../layouts/notify.scss";
+// @import "../layouts/partners.scss";
+// @import "../layouts/product.scss";
+// @import "../layouts/reviews.scss";
+// @import "../layouts/shop.scss";
+// //pages
+// @import "../pages/index.scss";
+
+// 1340px
+@include xxlg-xxxlg {
+  // layout start
+  @include info-xxlg-xxxlg;
+  // layout end
+
+  // index start
+  @include hero-xxlg-xxxlg;
+  // index end
+}
+
+// 1180px
+@include xlg-xxlg {
+  // layout start
+  @include nav-xlg-xxlg;
+  @include info-xlg-xxlg;
+  // layout end
+
+  // index start
+  @include hero-xlg-xxlg;
+  // index end
+
+  h5 {
+    font-size: 22px;
+    line-height: 28px;
+
+    &.light {
+      font-size: 22px;
+      line-height: 27px;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 23px;
+  }
+}
+
+// 1024px
+@include lg-xlg {
+  // layout start
+  @include nav-lg-xlg;
+  @include info-lg-xlg;
+  @include features-lg-xlg;
+  @include shop-lg-xlg;
+  // layout end
+
+  // index start
+  @include hero-lg-xlg;
+  // index end
+
+  .auto__container {
+    padding: 0 30px;
+  }
+
+  h2 {
+    font-size: 44px;
+    line-height: 54px;
+  }
+}
+
+// 840px
+@include md-lg {
+  // layout start
+  @include header-md-lg;
+  @include nav-md-lg;
+  @include partners-md-lg;
+  @include product-md-lg;
+  @include info-md-lg;
+  // @include slick-theme-md-lg;
+  @include review-md-lg;
+  @include features-md-lg;
+  @include form-md-lg;
+  @include account-md-lg;
+  @include shop-md-lg;
+  @include notify-md-lg;
+  @include footer-md-lg;
+  // layout end
+
+  // index start
+  @include hero-md-lg;
+  @include path-md-lg;
+  // index end
+
+  h2 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 34px;
+    line-height: 39px;
+  }
+
+  h4 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+// 700px
+@include sm-md {
+  // index start
+  @include hero-sm-md;
+  @include product-sm-md;
+  @include review-sm-md;
+  @include info-sm-md;
+  @include features-sm-md;
+  @include form-sm-md;
+  @include account-sm-md;
+  // index end
+
+  h2 {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  h5 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  h4 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+// 600px
+@include pre-sm-md {
+  // layout start
+  @include header-pre-sm-md;
+  @include nav-pre-sm-md;
+  // layout end
+}
+
+// 540px
+@include xsm-sm {
+  // layout start
+  @include nav-xsm-sm;
+  @include partners-xsm-sm;
+  @include product-xsm-sm;
+  @include info-xsm-sm;
+  @include features-xsm-sm;
+  @include form-xsm-sm;
+  @include account-xsm-sm;
+  @include shop-xsm-sm;
+  @include notify-xsm-sm;
+  @include footer-xsm-sm;
+  // layout end
+
+  // index start
+  @include hero-xsm-sm;
+  // index end
+
+  h2 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  h3 {
+    padding-top: 10px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  h4 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  h5 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  h6 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+
+// 440px
+@include xxsm-xsm {
+  // layout start
+  @include header-xxsm-xsm;
+  @include nav-xxsm-xsm;
+  // layout end
+
+  // index start
+  @include hero-xxsm-xsm;
+  // index end
+
+  .auto__container {
+    padding: 0 16px;
+  }
+}

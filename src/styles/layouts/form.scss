@@ -1,0 +1,433 @@
+.form {
+  &.login {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d8d8d8;
+
+    .form__link {
+      @include transition;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &.account {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form {
+      &__inner {
+        margin-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      &__input {
+        width: calc(50% - 10px);
+
+        &:nth-child(-n + 2) {
+          margin-bottom: 25px;
+        }
+      }
+    }
+
+    label {
+      margin: 0;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+    }
+
+    input {
+      margin: 0;
+      padding: 5px 20px;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid $black;
+
+      &::placeholder {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &.order {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
+
+    .button {
+      &.primary {
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+    }
+
+    .form {
+      &__title {
+        margin-bottom: 10px;
+        font-family: $montserrat;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: $black;
+        @include transition;
+      }
+
+      &__row {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          margin-bottom: 0;
+          width: calc(50% - 5px);
+        }
+      }
+    }
+
+    // Custom Select
+    .custom-select {
+      padding-top: 15px;
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+      position: relative;
+      font-family: Arial;
+      background-color: $white;
+      border-radius: 5px;
+      outline: 2px solid #d9d9d9;
+
+      span {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        display: block;
+        font-family: $montserrat;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        color: $black;
+      }
+
+      select {
+        display: none;
+      }
+
+      .select-selected {
+        background-color: transparent;
+
+        &.select-arrow-active:after {
+          transform: translateY(-50%) rotate(-180deg);
+        }
+
+        &::after {
+          content: url("../../images/icons/arrow-down.svg");
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          @include transformY;
+          width: 15px;
+          height: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include transition;
+        }
+      }
+
+      .select-items div,
+      .select-selected {
+        padding: 10px 20px;
+        font-family: $montserrat;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: capitalize;
+        color: $black;
+        cursor: pointer;
+      }
+
+      .select-items div {
+        border-bottom: 1px solid $gray;
+        @include transition;
+      }
+
+      .select-items {
+        overflow-y: auto;
+        position: absolute;
+        background-color: $white;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        width: 100%;
+        height: 200px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        outline: 2px solid #d9d9d9;
+      }
+
+      /* Hide the items when the select box is closed: */
+      .select-hide {
+        display: none;
+      }
+
+      .select-items div:hover,
+      .same-as-selected {
+        background-color: $sand;
+      }
+    }
+
+    input {
+      margin-bottom: 30px;
+      padding: 25px 20px;
+
+      &[type="number"] {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: $montserrat;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: $black;
+    @include transition;
+  }
+
+  input {
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    width: 100%;
+    border: 2px solid $gray-2;
+    border-radius: 5px;
+    font-family: $montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: $black;
+    @include transition;
+
+    &::placeholder {
+      font-family: $montserrat;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: capitalize;
+      color: $black;
+    }
+  }
+
+  .button {
+    &.primary {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+  }
+
+  &__section {
+    padding: 100px 0;
+
+    &-title {
+      margin-bottom: 20px;
+      font-family: $montserrat;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      text-transform: uppercase;
+      color: $sand;
+    }
+
+    &-inner {
+      margin: 0 auto;
+      max-width: 400px;
+
+      h2 {
+        margin-bottom: 50px;
+
+        &.sm {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-family: $montserrat;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: capitalize;
+    color: $black;
+
+    a {
+      @include transition;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// 840px
+@mixin form-md-lg {
+  .form {
+    &__section {
+      padding: 70px 0;
+    }
+
+    &.order {
+      padding-bottom: 20px;
+
+      .form {
+        &__title {
+          margin-bottom: 50px;
+          font-size: 18px;
+          line-height: 22px;
+        }
+
+        &__row {
+          margin-bottom: 10px;
+        }
+      }
+
+      .custom-select {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+
+      input {
+        margin-bottom: 10px;
+        padding: 20px 15px;
+
+        &[type="number"] {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+// 700px
+@mixin form-sm-md {
+  .form {
+    &.account {
+      .form {
+        &__inner {
+          margin: 0;
+          flex-direction: column;
+          justify-content: unset;
+        }
+
+        &__input {
+          margin-bottom: 25px;
+          width: 100%;
+
+          &:last-child {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+
+    &.order {
+      .custom-select {
+        padding-top: 15px;
+        padding-bottom: 5px;
+      }
+    }
+    label {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+// 540px
+@mixin form-xsm-sm {
+  .form {
+    &.account {
+      label {
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      input {
+        font-size: 16px;
+        line-height: 20px;
+
+        &:placeholder {
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &.order {
+      .select__container {
+        padding: 15px 10px;
+        padding-top: 40px;
+        font-size: 12px;
+        line-height: 15px;
+      }
+
+      input {
+        padding: 15px 10px;
+      }
+    }
+
+    &__section {
+      padding: 50px 0;
+
+      .button {
+        &.secondary {
+          padding: 15px 33px;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+    label {
+      font-size: 12px;
+      line-height: 15px;
+    }
+    input {
+      padding: 10px 20px;
+      font-size: 12px;
+      line-height: 15px;
+
+      &:nth-of-type(4) {
+        margin-bottom: 30px;
+      }
+
+      &::placeholder {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+    .button {
+      &.primary {
+        margin-bottom: 20px;
+        padding: 15px 33px;
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+  }
+}

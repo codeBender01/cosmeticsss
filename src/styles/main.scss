@@ -1,0 +1,22 @@
+//globals
+@import "./globals/mixins", "./globals/nulifier", "./globals/variables";
+//layouts
+@import "./layouts/account.scss";
+@import "./layouts/components.scss";
+@import "./layouts/features.scss";
+@import "./layouts/footer.scss";
+@import "./layouts/form.scss";
+@import "./layouts/header.scss";
+@import "./layouts/info.scss";
+@import "./layouts/nav.scss";
+@import "./layouts/notify.scss";
+@import "./layouts/partners.scss";
+@import "./layouts/product.scss";
+@import "./layouts/reviews.scss";
+@import "./layouts/shop.scss";
+@import "./layouts/slick-theme.scss";
+@import "./layouts/slick.scss";
+//pages
+@import "./pages/index.scss";
+//responsive
+@import "./globals/responsive";

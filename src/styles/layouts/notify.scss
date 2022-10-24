@@ -1,0 +1,159 @@
+.notify {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  background-color: $white;
+  transform: translateX(-100%);
+  opacity: 0;
+  @include transition;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__header {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-logo {
+      font-family: $pacifico;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 63px;
+      color: $pink;
+    }
+
+    a {
+      display: block;
+
+      &:last-child {
+        padding-bottom: 5px;
+        font-family: $montserrat;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: $black;
+        border-bottom: 1px solid $black;
+        @include transition;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      margin-bottom: 40px;
+      font-family: $montserrat;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 44px;
+      color: $green;
+      @include transition;
+    }
+
+    &-image {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include transition;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// 840px
+@mixin notify-md-lg {
+  .notify {
+    padding: 0;
+
+    &__header {
+      position: relative;
+      padding: 10px 0;
+      margin-bottom: 0;
+      flex-direction: row;
+      flex-flow: row-reverse;
+      justify-content: center;
+      align-items: center;
+      background-color: $white;
+
+      a {
+        &:last-child {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          @include transformY;
+        }
+      }
+    }
+
+    &__message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      @include transform;
+
+      &-title {
+        font-size: 32px;
+        line-height: 48px;
+      }
+
+      &-image {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  }
+}
+
+// 540px
+@mixin notify-xsm-sm {
+  .notify {
+    &__header {
+      &-logo {
+        font-size: 32px;
+        line-height: 56px;
+      }
+
+      a {
+        &:last-child {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+    }
+
+    &__message {
+      &-title {
+        font-size: 24px;
+        line-height: 29px;
+      }
+
+      &-image {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}

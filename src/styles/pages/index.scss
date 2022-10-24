@@ -1,0 +1,174 @@
+.hero {
+  position: relative;
+  margin-bottom: 50px;
+  padding-bottom: 42%;
+  @include transition;
+
+  &.new-arrivals {
+    margin-bottom: 0;
+    padding-bottom: 30%;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(
+      180deg,
+      #ffffff 11.67%,
+      rgba(255, 255, 255, 0) 92.86%
+    );
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  span {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    @include transformX;
+
+    width: 100%;
+    font-family: $montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 117px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $white;
+    @include transition;
+  }
+}
+
+// 1340px
+@mixin hero-xxlg-xxxlg {
+  .hero {
+    span {
+      font-size: 90px;
+      line-height: 110px;
+    }
+  }
+}
+
+// 1180px
+@mixin hero-xlg-xxlg {
+  .hero {
+    span {
+      font-size: 80px;
+      line-height: 100px;
+    }
+  }
+}
+
+// 1024px
+@mixin hero-lg-xlg {
+  .hero {
+    span {
+      font-size: 70px;
+      line-height: 90px;
+    }
+  }
+}
+
+// 840px
+@mixin hero-md-lg {
+  .hero {
+    &::before {
+      content: none;
+    }
+
+    &.new-arrivals {
+      padding-bottom: 45%;
+    }
+
+    span {
+      font-size: 60px;
+      line-height: 80px;
+    }
+  }
+}
+
+// 700px
+@mixin hero-sm-md {
+  .hero {
+    span {
+      font-size: 50px;
+      line-height: 65px;
+    }
+  }
+}
+
+// 540px
+@mixin hero-xsm-sm {
+  .hero {
+    span {
+      font-size: 40px;
+      line-height: 49px;
+    }
+  }
+}
+
+// 440px
+@mixin hero-xxsm-xsm {
+  .hero {
+    span {
+      font-size: 30px;
+      line-height: 39px;
+    }
+  }
+}
+
+// Path
+.path {
+  &-link {
+    font-family: $montserrat;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $black;
+    text-transform: uppercase;
+    @include transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:first-child {
+      position: relative;
+      margin-right: 12px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -8px;
+        width: 1px;
+        height: 100%;
+        background-color: $black;
+      }
+    }
+  }
+}
+
+// 840px
+@mixin path-md-lg {
+  .path {
+    margin-top: 20px;
+  }
+}

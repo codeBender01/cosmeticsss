@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../../public/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../../public/fonts/Montserrat-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("../../../public/fonts/Pacifico-Regular.ttf") format("truetype");
+}
+
+// Colors
+$black: #000000;
+$black-1: #333333;
+$white: #ffffff;
+$gray: #7e7e7e;
+$gray-1: #c5c5c5;
+$gray-2: #d9d9d9;
+$red: #e21515;
+$sand: #fbd797;
+$pink: #f9b6b8;
+$green: #87be6d;
+
+// Fonts
+$inter: "Inter", sans-serif;
+$pacifico: "Pacifico", cursive;
+$montserrat: "Montserrat", sans-serif;

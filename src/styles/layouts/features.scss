@@ -1,0 +1,186 @@
+.features {
+  background-color: $pink;
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $montserrat;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__block {
+    &-slider {
+      max-width: 400px;
+      margin: 0 -5px;
+      display: flex;
+    }
+
+    &-slide {
+      margin: 0 5px;
+      width: calc(25% - 10px);
+
+      &-image {
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        width: 90%;
+        padding-bottom: 90%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-title {
+        font-family: $montserrat;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $black;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+
+  &__inner {
+    padding: 100px 0;
+    @include transition;
+  }
+
+  &__row {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .features__block {
+      width: calc(50% - 10px);
+    }
+  }
+}
+
+// 1024px
+@mixin features-lg-xlg {
+  .features {
+    &__block {
+      &-slider {
+        max-width: 600px;
+      }
+      &-slide {
+        &-title {
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+    &__inner {
+      padding: 70px 0;
+    }
+    &__row {
+      flex-direction: column;
+      flex-flow: column-reverse;
+
+      .features__block {
+        width: 100%;
+
+        &:last-child {
+          margin-bottom: 30px;
+
+          p {
+            max-width: 700px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 840px
+@mixin features-md-lg {
+  .features {
+    &__title {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+
+// 700px
+@mixin features-sm-md {
+  .features {
+    &__title {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__inner {
+      padding: 50px 0;
+    }
+  }
+}
+
+// 540px
+@mixin features-xsm-sm {
+  .features {
+    &__title {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 25px;
+      letter-spacing: 0.15em;
+    }
+
+    &__block {
+      &-slider {
+        margin: 0;
+      }
+
+      &-slide {
+        margin: 0;
+        padding-bottom: 50px;
+
+        &-image {
+          margin: 0;
+          margin-bottom: 30px;
+          width: 70%;
+          padding-bottom: 70%;
+        }
+        &-title {
+          margin-bottom: 10px;
+          font-size: 18px;
+          line-height: 22px;
+          text-align: left;
+        }
+        p {
+          display: block;
+        }
+      }
+    }
+
+    &__inner {
+      padding: 30px 0;
+    }
+
+    &__row {
+      margin-bottom: 50px;
+      .features__block {
+        &:last-child {
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+}

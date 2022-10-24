@@ -1,0 +1,166 @@
+.footer {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: $black-1;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &-col {
+      width: calc(25% - 10px);
+
+      a {
+        margin-bottom: 15px;
+        display: block;
+        font-family: $montserrat;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $white;
+        @include transition;
+
+        &:hover {
+          opacity: 0.6;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      p {
+        margin-bottom: 10px;
+        font-family: $montserrat;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        color: $white;
+        @include transition;
+      }
+
+      .social {
+        display: flex;
+
+        span {
+          margin-right: 13px;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          @include transition;
+
+          &:hover {
+            opacity: 0.6;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      &:last-child {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        font-family: $montserrat;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: $white;
+        @include transition;
+      }
+    }
+  }
+}
+
+// 840px
+@mixin footer-md-lg {
+  .footer {
+    &__inner {
+      &-col {
+        width: calc(50% - 15px);
+
+        a,
+        p {
+          font-size: 13px;
+          line-height: 17px;
+        }
+
+        &:first-child {
+          margin-right: 0;
+        }
+
+        &:last-child {
+          margin-top: 30px;
+          width: 100%;
+          justify-content: center;
+          font-size: 13px;
+          line-height: 17px;
+        }
+      }
+    }
+  }
+}
+
+// 540px
+@mixin footer-xsm-sm {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    &__inner {
+      &-col {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+
+        a,
+        p {
+          font-size: 10px;
+          line-height: 12px;
+        }
+
+        p {
+          margin-bottom: 0;
+          margin-right: 10px;
+        }
+
+        .social {
+          span {
+            margin-right: 10px;
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        &:nth-child(2) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:last-child {
+          margin: 0;
+          font-size: 10px;
+          line-height: 12px;
+        }
+      }
+    }
+  }
+}

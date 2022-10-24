@@ -1,0 +1,384 @@
+.info {
+  padding: 50px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image {
+    position: relative;
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+    display: flex;
+    justify-content: flex-end;
+    @include transition;
+
+    &-main {
+      position: relative;
+      width: 83%;
+      padding-bottom: 83%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-nav {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      padding: 12px 0;
+      width: 50px;
+      height: 100%;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+
+      span {
+        position: relative;
+        margin: 12px 0;
+        width: 50px !important;
+        height: 50px !important;
+        cursor: pointer;
+        @include transition;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__content {
+    width: calc(50% - 10px);
+
+    h5 {
+      max-width: 470px;
+      margin-bottom: 30px;
+    }
+
+    &-row {
+      margin-bottom: 30px;
+      @include transition;
+    }
+
+    &-price {
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    .rating {
+      margin: 0;
+    }
+
+    &-descr {
+      margin-bottom: 50px;
+
+      span,
+      small {
+        display: none;
+      }
+    }
+
+    &-form {
+      display: flex;
+      align-items: center;
+    }
+
+    &-product {
+      display: none;
+
+      p {
+        margin-bottom: 10px;
+        letter-spacing: 0;
+        text-transform: capitalize;
+      }
+
+      span {
+        display: block;
+        font-family: $montserrat;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 0.05em;
+        text-transform: lowercase;
+        color: $gray-1;
+      }
+    }
+  }
+}
+
+// 1340px
+@mixin info-xxlg-xxxlg {
+  .info {
+    &__content {
+      h5 {
+        margin-bottom: 20px;
+      }
+      &-row {
+        margin-bottom: 20px;
+      }
+      &-price {
+        margin-bottom: 20px;
+      }
+      &-descr {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+// 1180px
+@mixin info-xlg-xxlg {
+  .info {
+    &__inner {
+      align-items: center;
+    }
+  }
+}
+
+// 1024px
+@mixin info-lg-xlg {
+  .info {
+    &__content {
+      .quantity-toggle {
+        width: 170px;
+      }
+
+      h5 {
+        margin-bottom: 15px;
+      }
+      &-row {
+        margin-bottom: 15px;
+      }
+      &-price {
+        margin-bottom: 15px;
+      }
+
+      &-descr {
+        p {
+          max-height: 184px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+// 840px
+@mixin info-md-lg {
+  .info {
+    &__inner {
+      position: relative;
+      flex-direction: column;
+      flex-flow: column-reverse;
+    }
+
+    &__image {
+      position: absolute;
+      top: 110px;
+      left: 50%;
+      z-index: 1;
+      @include transformX;
+      width: 480px;
+      height: unset;
+      flex-direction: column;
+
+      &-main {
+        margin-bottom: 20px;
+        width: 100%;
+        padding-bottom: 100%;
+      }
+
+      &-nav {
+        position: relative !important;
+        padding: 0 30px;
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        justify-content: center;
+
+        span {
+          margin: 0 7px;
+          width: 60px !important;
+          height: 60px !important;
+        }
+      }
+    }
+
+    &__content {
+      position: relative;
+      width: 100%;
+
+      h5 {
+        max-width: 600px;
+      }
+
+      &-row {
+        margin-bottom: 0;
+        padding-bottom: 620px;
+        display: flex;
+        align-items: center;
+      }
+
+      &-price {
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
+
+      &-descr {
+        span {
+          display: block;
+          margin-bottom: 10px;
+          font-family: $montserrat;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: $black;
+        }
+
+        small {
+          display: block;
+          margin-bottom: 10px;
+          font-family: $montserrat;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 26px;
+          letter-spacing: 0.05em;
+          text-transform: capitalize;
+          color: $black;
+        }
+        p {
+          max-height: 75px;
+        }
+      }
+
+      &-form {
+        margin-bottom: 20px;
+        justify-content: center;
+
+        .quantity-toggle {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      &-product {
+        display: block;
+      }
+    }
+  }
+}
+
+// 700px
+@mixin info-sm-md {
+  .info {
+    padding: 40px 0;
+
+    &__image {
+      width: 406px;
+
+      &-nav {
+        padding: 0 20px;
+        height: 50px;
+
+        span {
+          width: 50px !important;
+          height: 50px !important;
+        }
+      }
+    }
+
+    &__content {
+      &-row {
+        padding-bottom: 530px;
+      }
+    }
+  }
+}
+
+// 540px
+@mixin info-xsm-sm {
+  .info {
+    padding: 20px 0;
+    &__image {
+      width: 306px;
+
+      &-main {
+        margin-bottom: 10px;
+      }
+
+      &-nav {
+        span {
+          margin: 0 5px;
+        }
+      }
+    }
+    &__content {
+      h5 {
+        margin-bottom: 20px;
+      }
+      &-row {
+        padding-bottom: 410px;
+      }
+
+      &-price {
+        margin-right: 15px;
+      }
+
+      &-descr {
+        span {
+          font-size: 14px;
+          line-height: 25px;
+        }
+        small {
+          font-size: 12px;
+          line-height: 22px;
+        }
+        p {
+          max-height: 22px;
+        }
+      }
+      &-form {
+        .button {
+          padding: 15px 37px;
+          text-transform: unset;
+        }
+        .quantity-toggle {
+          width: 145px;
+          height: 40px;
+          padding: 10px 20px;
+
+          span {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+      &-product {
+        span {
+          font-size: 12px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
