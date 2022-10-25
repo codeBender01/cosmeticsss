@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
+import React, { useState, useRef, useEffect } from "react";
+import { SlArrowUp, SlArrowDown } from "react-icons/sl";
 
 const provinces = [
   {
@@ -36,12 +36,19 @@ const provinces = [
 function Cart(props) {
   const [isOpen, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const dropIcon = useRef();
 
   const handleItemClick = (id) => {
     selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
+    setOpen(false);
   };
 
   const toggleDropdown = () => setOpen(!isOpen);
+
+  const dropIconAnimate = () => {
+    const drop = dropIcon.current;
+    drop.classList.toggle("not-active");
+  };
 
   return (
     <>
@@ -60,13 +67,19 @@ function Cart(props) {
               </div>
               <form action="post" className="form order">
                 <div className="form__title">Shipping address</div>
-                <div className="select">
+                <div className="select" onClick={dropIconAnimate}>
+                  <span>Region</span>
+
                   <div className="dropdown-header" onClick={toggleDropdown}>
                     {selectedItem
                       ? provinces.find((item) => item.id === selectedItem).name
                       : "Mary"}
 
-                    {isOpen ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}
+                    <div className="drop-icon" ref={dropIcon}>
+                      {/* {isOpen ? (
+                        ) } */}
+                      <SlArrowUp size={20} />
+                    </div>
                   </div>
                   <div
                     className={`dropdown-body ${isOpen && "open"}`}

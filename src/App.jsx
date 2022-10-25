@@ -13,7 +13,7 @@ const Account = lazy(() => import("./pages/account"));
 function App() {
   return (
     <>
-      <Suspense fallback={<Spinner bgColor="#f9b6b8" />}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Router>
           <Header />
           <Routes>

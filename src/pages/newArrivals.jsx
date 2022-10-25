@@ -273,35 +273,44 @@ class NewArrivals extends React.Component {
   render() {
     return (
       <>
-        <section class="hero new-arrivals">
-          <div class="hero__image">
+        <section className="hero new-arrivals">
+          <div className="hero__image">
             <img src={bgNew} alt="" />
             <span>New Arrivals</span>
           </div>
         </section>
-        <section class="product__section">
-          <div class="auto__container">
-            <div class="product__section-inner">
-              <div class="product__row new-arrivals">
+        <section className="product__section">
+          <div className="auto__container">
+            <div className="product__section-inner">
+              <div className="product__row new-arrivals">
                 {newArrivalsProducts.map((product) => {
                   return (
-                    <div class="product" id={product.id} key={product.id}>
-                      <button class="product__add-cart">
+                    <div className="product" id={product.id} key={product.id}>
+                      <button className="product__add-cart">
                         <img src={addSvg} alt="add-cart" />
                       </button>
-                      <div class="product__inner">
-                        <div class="product__inner-image">
+                      <div className="product__inner">
+                        <div className="product__inner-image">
                           <img src={product.img} alt="product" />
                         </div>
-                        <div class="product__inner-company">Company Name</div>
-                        <a href="product.html" class="product__inner-content">
+                        <div className="product__inner-company">
+                          Company Name
+                        </div>
+                        <a
+                          href="product.html"
+                          className="product__inner-content"
+                        >
                           <h6>Product Name</h6>
-                          <div class="product__inner-price">
-                            <span class="product__inner-price-old">$99</span>
-                            <span class="product__inner-price-new">$99</span>
+                          <div className="product__inner-price">
+                            <span className="product__inner-price-old">
+                              $99
+                            </span>
+                            <span className="product__inner-price-new">
+                              $99
+                            </span>
                           </div>
                         </a>
-                        <div class="rating">
+                        <div className="rating">
                           {product.labelsId.map((labelId) => {
                             return (
                               <div key={labelId.id}>
@@ -310,7 +319,7 @@ class NewArrivals extends React.Component {
                                   name="p6-star"
                                   id={labelId.id}
                                 />
-                                <label for={labelId.id}>
+                                <label htmlFor={labelId.id}>
                                   <AiFillStar />
                                 </label>
                               </div>
@@ -322,8 +331,8 @@ class NewArrivals extends React.Component {
                   );
                 })}
               </div>
-              <div class="product__pages">
-                <a href="#" class="active">
+              <div className="product__pages">
+                <a href="#" className="active">
                   1
                 </a>
                 <a href="#">2</a>

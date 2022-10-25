@@ -8,18 +8,18 @@ import { IconContext } from "react-icons";
 
 function Footer() {
   return (
-    <footer class="footer">
-      <div class="auto__container">
-        <div class="footer__inner">
-          <div class="footer__inner-col">
+    <footer className="footer">
+      <div className="auto__container">
+        <div className="footer__inner">
+          <div className="footer__inner-col">
             <a href="#">TERMS OF USE</a>
             <a href="#">PRIVACY POLICY</a>
             <a href="#">SHIPPING & RETURNS</a>
             <a href="#">FAQ</a>
           </div>
-          <div class="footer__inner-col">
+          <div className="footer__inner-col">
             <p>FOLLOW US</p>
-            <div class="social">
+            <div className="social">
               <IconContext.Provider
                 value={{
                   color: "#ffffff",
@@ -38,7 +38,7 @@ function Footer() {
               </IconContext.Provider>
             </div>
           </div>
-          <div class="footer__inner-col">
+          <div className="footer__inner-col">
             © 2022 beautifull Tm. All right reserved.
           </div>
         </div>
