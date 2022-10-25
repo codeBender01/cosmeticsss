@@ -147,7 +147,6 @@ function Header() {
 
     window.addEventListener("scroll", () => {
       const header = refHeader.current;
-      const nav = refNav.current;
 
       if (header) {
         if (window.pageYOffset > header.offsetTop) {
