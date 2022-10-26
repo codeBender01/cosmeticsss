@@ -9,6 +9,7 @@ import "./styles/main.scss";
 import Home from "./pages/home";
 const NewArrivals = lazy(() => import("./pages/newArrivals"));
 const Account = lazy(() => import("./pages/account"));
+const Product = lazy(() => import("./pages/product"));
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/newarrivals" element={<NewArrivals />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
           <Footer />
         </Router>

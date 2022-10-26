@@ -524,8 +524,8 @@ class Home extends React.Component {
                               <div className="product__inner-image">
                                 <img src={product.img} alt="product" />
                               </div>
-                              <a
-                                href="product.html"
+                              <NavLink
+                                to="/product"
                                 className="product__inner-content"
                               >
                                 <div className="product__inner-company">
@@ -540,7 +540,7 @@ class Home extends React.Component {
                                     $99
                                   </span>
                                 </div>
-                              </a>
+                              </NavLink>
                               <div className="rating">
                                 {product.labelsId.map((labelId) => {
                                   return (
@@ -583,8 +583,8 @@ class Home extends React.Component {
                         <div className="product__inner-image">
                           <img src={product.img} alt="product" />
                         </div>
-                        <a
-                          href="product.html"
+                        <NavLink
+                          to="/product"
                           className="product__inner-content"
                         >
                           <div className="product__inner-company">
@@ -599,7 +599,7 @@ class Home extends React.Component {
                               $99
                             </span>
                           </div>
-                        </a>
+                        </NavLink>
                         <div className="rating">
                           {product.labelIds.map((labelId) => {
                             return (
@@ -634,14 +634,14 @@ class Home extends React.Component {
             </div>
           </div>
         </section>
-        <section class="partner__section">
-          <div class="auto__container">
-            <div class="partner__section-inner">
+        <section className="partner__section">
+          <div className="auto__container">
+            <div className="partner__section-inner">
               <h3>Partners</h3>
-              <div class="partner__row">
+              <div className="partner__row">
                 {partnersImage.map((partner) => {
                   return (
-                    <div class="partner" key={partner.img}>
+                    <div className="partner" key={partner.img}>
                       <img src={partner.img} alt="partner" />
                     </div>
                   );

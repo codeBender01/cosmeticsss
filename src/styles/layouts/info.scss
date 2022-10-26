@@ -80,6 +80,9 @@
     &-price {
       display: block;
       margin-bottom: 30px;
+      font-family: $montserrat;
+      font-weight: 400;
+      font-size: 14px;
     }
 
     .rating {
@@ -203,6 +206,22 @@
         margin-bottom: 20px;
         width: 100%;
         padding-bottom: 100%;
+      }
+
+      .slick-prev {
+        top: 50%;
+        left: 0;
+
+        transform: translateY(-50%) rotate(-90deg);
+      }
+
+      .slick-next {
+        top: 50%;
+        left: unset;
+        bottom: unset;
+        right: 0;
+
+        transform: translateY(-50%) rotate(-90deg);
       }
 
       &-nav {
