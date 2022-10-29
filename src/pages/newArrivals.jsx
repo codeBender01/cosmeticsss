@@ -14,6 +14,8 @@ import product11 from "../images/product/product-11.png";
 import addSvg from "../images/icons/add.svg";
 import { AiFillStar } from "react-icons/ai";
 
+import { NavLink } from "react-router-dom";
+
 const newArrivalsProducts = [
   {
     id: "pr1",
@@ -296,8 +298,8 @@ class NewArrivals extends React.Component {
                         <div className="product__inner-company">
                           Company Name
                         </div>
-                        <a
-                          href="product.html"
+                        <NavLink
+                          to="/product"
                           className="product__inner-content"
                         >
                           <h6>Product Name</h6>
@@ -309,7 +311,7 @@ class NewArrivals extends React.Component {
                               $99
                             </span>
                           </div>
-                        </a>
+                        </NavLink>
                         <div className="rating">
                           {product.labelsId.map((labelId) => {
                             return (
