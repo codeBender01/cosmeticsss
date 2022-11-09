@@ -3,6 +3,8 @@ import { ReactComponent as SearchIcon } from "../../images/icons/search.svg";
 import { ReactComponent as CartIcon } from "../../images/icons/cart.svg";
 import { ReactComponent as Account } from "../../images/icons/user.svg";
 import { NavLink } from "react-router-dom";
+import { filterProductsInCart } from "../../store/productInfo/productInfo";
+import { useDispatch } from "react-redux";
 import cross from "../../images/icons/cross.svg";
 import Cart from "../cart/Cart";
 
@@ -194,8 +196,10 @@ function Header() {
     if (event.currentTarget) {
       event.stopPropagation();
     }
+
     setSelectedNav(id);
     setActiveNav(!activeNav);
+    console.log(selectedNav);
   };
 
   const searchBoxHandler = () => {

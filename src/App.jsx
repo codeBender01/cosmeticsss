@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Spinner } from "react-spinner-animated";
+// import { Spinner } from "react-spinner-animated";
 import "react-spinner-animated/dist/index.css";
 
 import "./styles/main.scss";

@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import { SlArrowUp, SlArrowDown } from "react-icons/sl";
+import { SlArrowUp } from "react-icons/sl";
+import { useSelector } from "react-redux";
+import AddedProduct from "./addedProduct/AddedProduct";
 
 const provinces = [
   {
@@ -38,6 +40,8 @@ function Cart(props) {
   const [selectedItem, setSelectedItem] = useState(null);
   const dropIcon = useRef();
 
+  const productsInCart = useSelector((state) => state.products.productsInCart);
+
   const handleItemClick = (id) => {
     selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
     setOpen(false);
@@ -59,7 +63,7 @@ function Cart(props) {
               <div className="shop__order-header">
                 <a href="#" className="shop__order-header-logo">
                   {" "}
-                  Beautiful{" "}
+                  Beautiful
                 </a>
                 <button id="cart-close" onClick={props.cartboxHandler}>
                   Back
@@ -117,7 +121,18 @@ function Cart(props) {
           </div>
           <div className="shop__cart">
             <div className="shop__cart-inner">
-              <div className="shop__cart-products"></div>
+              <div className="shop__cart-products">
+                {productsInCart.map((pr) => {
+                  return (
+                    <AddedProduct
+                      imageSource={pr.img}
+                      name={pr.id}
+                      price="$99"
+                      key={pr.id}
+                    />
+                  );
+                })}
+              </div>
               <div className="shop__cart-price">
                 <div className="shop__cart-price-block">
                   <div className="shop__cart-price-row">
