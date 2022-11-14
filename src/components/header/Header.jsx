@@ -3,10 +3,10 @@ import { ReactComponent as SearchIcon } from "../../images/icons/search.svg";
 import { ReactComponent as CartIcon } from "../../images/icons/cart.svg";
 import { ReactComponent as Account } from "../../images/icons/user.svg";
 import { NavLink } from "react-router-dom";
-import { filterProductsInCart } from "../../store/productInfo/productInfo";
-import { useDispatch } from "react-redux";
 import cross from "../../images/icons/cross.svg";
 import Cart from "../cart/Cart";
+import { useDispatch } from "react-redux";
+import { fetchRecipes, setImages } from "../../store/productInfo/productInfo";
 
 const drops = [
   {
@@ -125,6 +125,7 @@ function Header() {
   const refHeader = useRef();
   const refNav = useRef();
   const refMenuBtn = useRef();
+  const navDrop = useRef();
   const body = document.body;
   const [activeNav, setActiveNav] = useState(false);
   const [selectedNav, setSelectedNav] = useState(null);
@@ -132,15 +133,18 @@ function Header() {
   const [searchClicked, setSearchClicked] = useState(false);
   const [cartClicked, setCartClicked] = useState(false);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const menuBtn = refMenuBtn.current;
     const nav = refNav.current;
+
     const body = document.body;
     const navBtns = document.querySelectorAll(".nav__inner-button");
     const navDrops = document.querySelectorAll(".nav__inner-content");
 
     window.addEventListener("click", (event) => {
-      if (event.target == nav) {
+      if (event.target === nav) {
         nav.classList.remove("active");
         menuBtn.classList.remove("active");
         body.classList.remove("active");
@@ -167,13 +171,15 @@ function Header() {
         }
       }
     });
+    dispatch(fetchRecipes());
+    dispatch(setImages());
 
     body.addEventListener("click", () => {
-      navBtns.forEach((navBtn) => {
-        navBtn.classList.remove("active");
+      navDrops.forEach((nDrop) => {
+        nDrop.classList.remove("active");
       });
-      navDrops.forEach((navDrop) => {
-        navDrop.classList.remove("active");
+      navBtns.forEach((nBtn) => {
+        nBtn.classList.remove("active");
       });
     });
 
@@ -182,7 +188,7 @@ function Header() {
     } else {
       body.classList.remove("active");
     }
-  });
+  }, [dispatch, cartClicked]);
 
   const burgerMenuHandler = () => {
     const nav = refNav.current;
@@ -198,8 +204,10 @@ function Header() {
     }
 
     setSelectedNav(id);
-    setActiveNav(!activeNav);
-    console.log(selectedNav);
+
+    if (id === selectedNav) {
+      setActiveNav(!activeNav);
+    }
   };
 
   const searchBoxHandler = () => {
@@ -278,18 +286,22 @@ function Header() {
             </NavLink>
             {drops.map((drop) => {
               return (
-                <div className="nav__inner-container" key={drop.id}>
+                <div
+                  className="nav__inner-container"
+                  key={drop.id}
+                  onClick={(event) => navClickHandler(drop.id, event)}
+                >
                   <div
                     className={`nav__inner-button ${
-                      activeNav && selectedNav === drop.id ? "active" : null
+                      activeNav && selectedNav === drop.id ? "active" : ""
                     }`}
-                    onClick={(event) => navClickHandler(drop.id, event)}
+                    ref={navDrop}
                   >
                     {drop.title}
                   </div>
                   <div
                     className={`nav__inner-content ${
-                      activeNav && selectedNav === drop.id ? "active" : null
+                      activeNav && selectedNav === drop.id ? "active" : ""
                     }`}
                   >
                     {drop.innerContent.map((link) => {

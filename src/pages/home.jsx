@@ -23,6 +23,7 @@ import Slider from "react-slick";
 import { AiFillStar } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+import { addProductToTheCart } from "../store/productInfo/productInfo";
 
 const bestSellerProducts = [
   {
@@ -259,7 +260,12 @@ class Home extends React.Component {
                             key={product.id}
                           >
                             <span className="product__discount">sale 60%</span>
-                            <button className="product__add-cart">
+                            <button
+                              className="product__add-cart"
+                              onClick={() =>
+                                this.props.addProductToTheCart(product.id)
+                              }
+                            >
                               <img src={addSvg} alt="add-cart" />
                             </button>
                             <div className="product__inner">
@@ -318,7 +324,12 @@ class Home extends React.Component {
                 {this.props.products.map((product, idx) => {
                   return (
                     <div className="product" id={product.id} key={product.id}>
-                      <button className="product__add-cart">
+                      <button
+                        className="product__add-cart"
+                        onClick={() =>
+                          this.props.addProductToTheCart(product.id)
+                        }
+                      >
                         <img src={addSvg} alt="add-cart" />
                       </button>
                       <div className="product__inner">
@@ -401,4 +412,6 @@ const mapStateToProps = (state) => ({
   products: state.products.products,
 });
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = { addProductToTheCart };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
